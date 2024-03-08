@@ -63,4 +63,16 @@ public class CustomListTest {
             citylist.delete(city);
         });
     }
+
+    @Test
+    void testCount(){
+        CustomList citylist = MockCityList();
+        City city = new City("Edmonton", "Alberta");
+        citylist.add(city);
+        assertEquals(1, citylist.count());
+        citylist.delete(city);
+        assertEquals(0, citylist.count());
+        citylist.add(city);
+        assertEquals(1, citylist.count());
+    }
 }
