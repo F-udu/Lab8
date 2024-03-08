@@ -9,6 +9,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CustomListTest {
 
@@ -34,6 +35,19 @@ public class CustomListTest {
         int listSize = list.getCount();
         list.addCity(new City("Estevan", "SK"));
         assertEquals(list.getCount(),listSize + 1);
+    }
+
+    @Test
+    void testHasCity(){
+
+        CustomList custlist = new CustomList();
+
+        City city = new City("Edmonton", "Alberta");
+
+        City city2 = new City("Edmonton", "Alberta");
+        custlist.add(city);
+        assertEquals(true, custlist.hasCity(city));
+        assertEquals(false, custlist.hasCity(city2));
     }
 
 }
