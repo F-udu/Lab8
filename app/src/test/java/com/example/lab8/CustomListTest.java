@@ -40,12 +40,12 @@ public class CustomListTest {
     @Test
     void testHasCity(){
 
-        CustomList custlist = new CustomList();
+        CustomList custlist = MockCityList();
 
         City city = new City("Edmonton", "Alberta");
 
         City city2 = new City("Edmonton", "Alberta");
-        custlist.add(city);
+        custlist.addCity(city);
         assertEquals(true, custlist.hasCity(city));
         assertEquals(false, custlist.hasCity(city2));
     }
